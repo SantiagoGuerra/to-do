@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Project from '../logic/project';
 import Task from '../logic/task';
 
@@ -17,45 +18,45 @@ console.log(`Number of tasks: ${project.tasks.length}`);
 console.log('----------');
 
 
-console.log('Project with two tasks');
+console.log('---Project with two tasks---');
 const task2 = new Task('Limpiar', 'Lustrar todo como corresponde', '2020/03/12', 'high', false);
 project.addTask(task2);
 console.log(`Number of tasks: ${project.tasks.length}`);
 console.log('----------');
 
 
-console.log('Delete first task. Project should have one task');
+console.log('---Delete first task. Project should have one task---');
 project.deleteTask(task.id);
 console.log(`Number of tasks: ${project.tasks.length}`);
 
 
-console.log('Delete second task. Project should have zero tasks');
+console.log('---Delete second task. Project should have zero tasks---');
 project.deleteTask(task2.id);
 console.log(`Number of tasks: ${project.tasks.length}`);
 console.log('----------');
 
 
-console.log('Edit test');
+console.log('---Edit test---');
 const task3 = new Task('Cocinar 2', 'Hacer rica comida', '2020/03/11', 'low', false);
 project.addTask(task3);
-console.log(project.tasks);
+console.log(JSON.stringify(project.tasks));
 
 project.editTask(task3.id, { title: 'New name 1' });
-console.log(project.tasks);
+console.log(JSON.stringify(project.tasks));
 console.log('----------');
 
 
-console.log('Edit test');
+console.log('---Edit test---');
 const task4 = new Task('Limpiar 2', 'Lustrar todo como corresponde', '2020/03/12', 'high', false);
 project.addTask(task4);
-console.log(project.tasks);
-project.editTask(task4.id, { title: 'New name' });
-console.log(project.tasks);
+console.log(JSON.stringify(project.tasks));
+project.editTask(task4.id, { title: 'New namezzz' });
+console.log(JSON.stringify(project.tasks));
 console.log('----------');
 
 
-console.log('Changes name');
-console.log(project);
+console.log('---Changes name---');
+console.dir(JSON.stringify(project));
 project.changeName('New project name');
-console.log(project);
+console.dir(JSON.stringify(project));
 console.log('----------');
