@@ -1,4 +1,4 @@
-import { v1 as uuidv1 } from 'uuid';
+
 
 export default class Project {
   constructor(name) {
@@ -7,7 +7,16 @@ export default class Project {
   }
 
   addTask(task) {
-    task.id = uuidv1();
     this.tasks.push(task);
+  }
+
+  deleteTask(inputId) {
+    this.tasks.forEach((task, i) => {
+      if (task.id === inputId) {
+        this.tasks.splice(i, 1);
+        return 0;
+      }
+      return 1;
+    });
   }
 }
