@@ -31,5 +31,5 @@ module.exports = {
       },
     ],
   },
-  devtool: 'source-map', //development
+  devtool: 'source-map', // development
 };
