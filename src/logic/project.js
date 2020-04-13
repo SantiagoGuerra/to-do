@@ -31,4 +31,8 @@ export default class Project {
       return -1;
     });
   }
+
+  changeName(newName) {
+    this.name = newName;
+  }
 }

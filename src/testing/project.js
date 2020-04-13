@@ -40,7 +40,7 @@ const task3 = new Task('Cocinar 2', 'Hacer rica comida', '2020/03/11', 'low', fa
 project.addTask(task3);
 console.log(project.tasks);
 
-project.editTask(task3.id, {title: 'New name 1' });
+project.editTask(task3.id, { title: 'New name 1' });
 console.log(project.tasks);
 console.log('----------');
 
@@ -48,8 +48,14 @@ console.log('----------');
 console.log('Edit test');
 const task4 = new Task('Limpiar 2', 'Lustrar todo como corresponde', '2020/03/12', 'high', false);
 project.addTask(task4);
-console.log(project.tasks)
-project.editTask(task4.id, {title: 'New name'});
-console.log(project.tasks)
-console.log("----------");
+console.log(project.tasks);
+project.editTask(task4.id, { title: 'New name' });
+console.log(project.tasks);
+console.log('----------');
 
+
+console.log('Changes name');
+console.log(project);
+project.changeName('New project name');
+console.log(project);
+console.log('----------');
