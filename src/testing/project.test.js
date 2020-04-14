@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import Project from '../logic/project';
 import Task from '../logic/task';
+import {equal, notEqual} from './helpers';
 
 
 console.log('----- Tests begin -----');
@@ -28,21 +29,20 @@ console.log('----------');
 console.log('---Delete first task. Project should have one task---');
 project.deleteTask(task.id);
 console.log(`Number of tasks: ${project.tasks.length}`);
-
-
 console.log('---Delete second task. Project should have zero tasks---');
 project.deleteTask(task2.id);
 console.log(`Number of tasks: ${project.tasks.length}`);
 console.log('----------');
 
 
-console.log('---Edit test---');
+console.log('---zzzzzzzzzzzEdit task test---');
 const task3 = new Task('Cocinar 2', 'Hacer rica comida', '2020/03/11', 'low', false);
 project.addTask(task3);
-console.log(JSON.stringify(project.tasks));
-
-project.editTask(task3.id, { title: 'New name 1' });
-console.log(JSON.stringify(project.tasks));
+const expected = project;
+//console.log(JSON.stringify(project.tasks));
+const result = project.editTask(task3.id, { title: 'New name 1' });
+//console.log(JSON.stringify(project.tasks));
+notEqual(expected, result);
 console.log('----------');
 
 
