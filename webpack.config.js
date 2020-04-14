@@ -39,14 +39,6 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Output Management',
-      template: './src/index.html',
-    }),
-  ],
-
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
@@ -74,6 +66,12 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management',
+      template: './src/index.html',
+    }),
+  ],
 };
 
 module.exports = (env, argv) => {

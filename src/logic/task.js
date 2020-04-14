@@ -1,13 +1,13 @@
 import { v1 as uuidv1 } from 'uuid';
 
 export default class Task {
-  constructor(title, description, dueDate, priority, done) {
+  constructor(title, description, dueDate, priority) {
     this.id = uuidv1();
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.done = done;
+    this.done = false;
   }
 
   edit(properties) {
