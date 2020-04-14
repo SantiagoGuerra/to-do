@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 
 export default class Project {
   constructor(name) {
-    this.id = uuidv1();
+    this.id = `a${uuidv1()}`;
     this.name = name;
     this.tasks = [];
   }

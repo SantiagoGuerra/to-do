@@ -87,4 +87,6 @@ export default function seed() {
     'low',
   );
   project3.addTask(taskP3T3);
+
+  return projectList;
 }
