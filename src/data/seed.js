@@ -14,6 +14,7 @@ export default function seed() {
     'Remove the leaves out of the pipes',
     '20/12/28',
     'low',
+    true,
   );
   project1.addTask(taskP1T1);
 
