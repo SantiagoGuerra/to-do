@@ -2,7 +2,7 @@ export function appendHTML(query, html, id) {
   const element = document.querySelector(query);
   element.id = id;
   element.innerHTML = html;
-  return html;
+  return element;
 }
 
 function createElement(elementType) {
@@ -15,7 +15,7 @@ export function appendChild(query, htmlString, id, elementType) {
   elem.innerHTML = htmlString;
   const content = document.querySelector(query);
   content.appendChild(elem);
-  return true;
+  return elem;
 }
 
 export function appendChildToMain(htmlString, id) {
