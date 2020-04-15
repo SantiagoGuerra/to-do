@@ -1,9 +1,5 @@
 import seed from './data/seed';
 
-const state = {
+export default {
   projectList: seed(),
 };
-
-export default function initializeState() {
-  return state;
-}
