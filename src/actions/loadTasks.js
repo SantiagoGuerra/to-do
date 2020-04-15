@@ -1,4 +1,5 @@
 import {appendChild} from '../utils/append';
+import loadTaskInformation from './loadTaskInformation';
 
 export default function loadTasks(project) {
   project.forEach(task => {
@@ -6,7 +7,7 @@ export default function loadTasks(project) {
     let projectElem = appendChild('#tasks', `<p>${task.title}</p>`, task.id, 'div');
     
     projectElem.addEventListener('click', e => {
-      console.log(task.title)
+      loadTaskInformation(task)
     })
 
   })

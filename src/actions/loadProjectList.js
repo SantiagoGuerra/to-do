@@ -8,7 +8,7 @@ export default function loadProjectList(projectList) {
     let projectListElem = appendChild('#projectList', `<p>${project.name}</p>`, project.id, 'div');
     
     projectListElem.addEventListener('click', e => {
-      console.log(project)
+      document.querySelector('#tasks').innerHTML = ''
       loadTask(project.tasks)
     }) 
 
