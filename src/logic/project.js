@@ -37,4 +37,8 @@ export default class Project {
   changeName(newName) {
     this.name = newName;
   }
+
+  findTask(inputId) {
+    return this.tasks.filter((task) => task.id === inputId)[0];
+  }
 }

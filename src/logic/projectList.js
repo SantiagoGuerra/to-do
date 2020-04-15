@@ -16,4 +16,8 @@ export default class ProjectList {
       return -1;
     });
   }
+
+  findProject(inputId) {
+    return this.projects.filter((project) => project.id === inputId)[0];
+  }
 }
