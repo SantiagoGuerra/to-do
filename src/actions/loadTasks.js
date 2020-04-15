@@ -8,10 +8,27 @@ export default function loadTasks(project) {
   document.querySelector('#tasks').innerHTML = '';
   appendChild('#tasks', '', taskContainerID, 'div');
   project.tasks.forEach(task => {
-    const projectElem = appendChild(`#${taskContainerID}`, `<p>${task.title}</p>      `, task.id, 'div');
-    projectElem.addEventListener('click', () => {
+    const projectElem = appendChild(`#${taskContainerID}`, `<p class='task-title'>${task.title}</p>      `, task.id, 'div');
+    projectElem.querySelector('.task-title').addEventListener('click', () => {
       loadTaskInformation(task);
     });
+
+
+    // copy
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('text-color-black');
+    deleteButton.innerHTML = 'Delete';
+
+    deleteButton.addEventListener('click', () => {
+      const targetProject = document.querySelector(`#project${project.id}`);
+      const targetTask = document.querySelector(`#${task.id}`);
+      state.projectList.findProject(project.id).deleteTask(task.id);
+      targetProject.removeChild(targetTask);
+      document.querySelector('.edit-task').innerHTML = '';
+    });
+    projectElem.appendChild(deleteButton);
+
+    // --
   });
   const inputTask = appendChild(`#${taskContainerID}`, '', 'add-project', 'input');
   inputTask.type = 'text';
