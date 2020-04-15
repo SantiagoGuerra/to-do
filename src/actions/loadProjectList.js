@@ -7,22 +7,37 @@ import Project from '../logic/project';
 export default function loadProjectList(projectList) {
   document.querySelector('#projectList').innerHTML = '';
   projectList.forEach(project => {
-    // let projectID = document.querySelector('p')
-    // console.log(projectID)
-    let projectListElem = appendChild('#projectList', `<p>${project.name}</p>`, project.id, 'div');
-
-    projectListElem.addEventListener('click', e => {
-      document.querySelector('#tasks').innerHTML = ''
-      loadTask(project.tasks);
+    const projectListElem = appendChild('#projectList', `<p class='project-name'>${project.name}</p>`, project.id, 'div');
+    projectListElem.querySelector('.project-name').addEventListener('click', () => {
+      document.querySelector('#tasks').innerHTML = '';
+      loadTask(project);
     });
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('text-color-black');
+    deleteButton.innerHTML = 'Delete';
+
+    deleteButton.addEventListener('click', () => {
+      const target = document.querySelector(`#${project.id}`);
+      state.projectList.deleteProject(project.id);
+      target.parentElement.removeChild(target);
+      const targetTaskContainer = document.getElementById(`project${project.id}`);
+      const tasks = document.getElementById('tasks');
+      tasks.removeChild(targetTaskContainer);
+      document.querySelector('.edit-task').innerHTML = '';
+    });
+    projectListElem.appendChild(deleteButton);
   });
   const inputProject = appendChild('#projectList', '', 'add-project', 'input');
   inputProject.type = 'text';
   inputProject.classList.add('text-color-black');
+
+
   inputProject.addEventListener('keyup', e => {
-    if (e.key === 'Enter') {      
+    if (e.key === 'Enter') {
       const newProject = new Project(inputProject.value);
       state.projectList.addProject(newProject);
       loadProjectList(state.projectList.projects);
+    }
   });
 }

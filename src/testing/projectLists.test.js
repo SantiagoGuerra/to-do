@@ -3,7 +3,6 @@ import ProjectList from '../logic/projectList';
 import Project from '../logic/project';
 
 
-
 console.log('---Create a ProjectList---');
 const projectList = new ProjectList();
 console.log(projectList);

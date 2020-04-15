@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import Project from '../logic/project';
 import Task from '../logic/task';
-import {equal, notEqual} from './helpers';
+import { notEqual } from './helpers';
 
 
 console.log('----- Tests begin -----');
@@ -39,9 +39,9 @@ console.log('---zzzzzzzzzzzEdit task test---');
 const task3 = new Task('Cocinar 2', 'Hacer rica comida', '2020/03/11', 'low', false);
 project.addTask(task3);
 const expected = project;
-//console.log(JSON.stringify(project.tasks));
+// console.log(JSON.stringify(project.tasks));
 const result = project.editTask(task3.id, { title: 'New name 1' });
-//console.log(JSON.stringify(project.tasks));
+// console.log(JSON.stringify(project.tasks));
 notEqual(expected, result);
 console.log('----------');
 

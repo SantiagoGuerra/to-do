@@ -8,5 +8,5 @@ export default function TaskInformation(title, description) {
         ${description}
       </p>
     </div>
-  `
+  `;
 }
