@@ -6,6 +6,7 @@ import Task from '../logic/task';
 export default function loadTasks(project) {
   const taskContainerID = `project${project.id}`;
   document.querySelector('#tasks').innerHTML = '';
+  appendChild('#tasks', project.name, '', 'h2').classList.add('task-project-title');
   appendChild('#tasks', '', taskContainerID, 'div').classList.add('task-list');
   project.tasks.forEach(task => {
     const projectElem = appendChild(`#${taskContainerID}`, `<p class='task-title'>${task.title}</p>      `, task.id, 'div');

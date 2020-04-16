@@ -1,0 +1,45 @@
+.edit {
+
+  &-task {
+    background: #34495E;
+    min-width: 320px;    
+    height: 100%;
+    padding: 24px;
+  }
+
+  &-input {
+    color: var(--light-color);
+    background: var(--second-color);
+    padding: 16px 0 ;
+    font-size: 16px;
+    border: none;
+    display: inline-block;
+    width: 100%;
+
+    &-description {
+      resize: none;
+      height: 160px;
+      padding: 16px 2px;
+      
+      &:focus {
+        border: .5px var(--third-color) solid;
+      }
+    }
+
+    &-checkbox {
+      display: inline-block;
+    }
+
+    &-submit {
+      background: var(--third-color);
+      margin-top: 24px;
+      border-radius: 8px;
+    }
+  }
+}
+
+label {
+  color: var(--third-color);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
