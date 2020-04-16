@@ -1,0 +1,8 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
