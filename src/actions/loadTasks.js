@@ -6,7 +6,8 @@ import Task from '../logic/task';
 export default function loadTasks(project) {
   const taskContainerID = `project${project.id}`;
   document.querySelector('#tasks').innerHTML = '';
-  appendChild('#tasks', '', taskContainerID, 'div');
+  appendChild('#tasks', '', taskContainerID, 'div').classList.add('task-list');
+  // aca se crea el primer contenedor -> el elemento se llamará taskContainerTasks
   project.tasks.forEach(task => {
     const projectElem = appendChild(`#${taskContainerID}`, `<p class='task-title'>${task.title}</p>      `, task.id, 'div');
     projectElem.querySelector('.task-title').addEventListener('click', () => {
@@ -15,7 +16,7 @@ export default function loadTasks(project) {
 
 
     const deleteButton = document.createElement('button');
-    deleteButton.classList.add('text-color-black');
+    deleteButton.classList.add('delete-button');
     deleteButton.innerHTML = 'Delete';
 
     deleteButton.addEventListener('click', () => {
@@ -26,10 +27,13 @@ export default function loadTasks(project) {
       document.querySelector('.edit-task').innerHTML = '';
     });
     projectElem.appendChild(deleteButton);
+    projectElem.classList.add('task-item');
   });
-  const inputTask = appendChild(`#${taskContainerID}`, '', 'add-project', 'input');
+  // Se implementará en el taskContainerTasks
+  const inputTask = appendChild('#tasks', '', 'add-project', 'input');
   inputTask.type = 'text';
-  inputTask.classList.add('text-color-black');
+  inputTask.classList.add('add-new-task');
+  inputTask.setAttribute('placeholder', 'Create a new task');
   inputTask.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       const newTask = new Task(inputTask.value);

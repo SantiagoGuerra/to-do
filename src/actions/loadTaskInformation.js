@@ -1,4 +1,5 @@
 import { appendChild } from '../utils/append';
+import loadTasks from './loadTasks';
 import TaskInformation from '../components/TaskInformation/index';
 import state from '../state';
 
@@ -18,5 +19,7 @@ export default function loadTaskInformation(task, projectId) {
     editedTask.done = document.querySelector('#task-done').checked;
 
     state.projectList.findProject(projectId).editTask(task.id, editedTask);
+
+    loadTasks(state.projectList.findProject(projectId));
   });
 }

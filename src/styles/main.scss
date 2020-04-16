@@ -1,8 +1,8 @@
 @import 'base/variables';
 @import 'base/reset';
-* {
-  color: #fff;
-}
+
+@import 'components/tasks';
+
 
 #content {
   display: flex;
@@ -16,11 +16,11 @@
   height: 100%;
 }
 
-#tasks {
-  width: 400px;
-  height: 100%;
-  background: var(--main-color);
-}
+// #tasks {
+//   width: 400px;
+//   height: 100%;
+//   background: var(--main-color);
+// }
 
 .text-color-black{
   color: black;
