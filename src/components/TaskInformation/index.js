@@ -1,10 +1,4 @@
 export default function TaskInformation(task) {
-  // this.id
-  // this.title
-  // this.description
-  // this.dueDate
-  // this.priority
-  // this.done
   return `
     <form id="edit-task-form" class='task-information'>                 
 

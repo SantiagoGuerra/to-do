@@ -22,14 +22,3 @@ export function appendChildToMain(htmlString, id) {
   appendChild('#content', htmlString, id, 'div');
   return true;
 }
-
-
-// function renderContent(htmlString, id) {
-//   while (main.firstChild) {
-//     main.removeChild(main.lastChild);
-//   }
-//   const elem = document.createElement('div');
-//   elem.id = id;
-//   elem.innerHTML = htmlString;
-//   main.appendChild(elem);
-// }

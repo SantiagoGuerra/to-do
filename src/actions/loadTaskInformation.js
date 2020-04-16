@@ -6,11 +6,6 @@ export default function loadTaskInformation(task, projectId) {
   document.querySelector('.edit-task').innerHTML = '';
 
   appendChild('.edit-task', TaskInformation(task), task.id, 'div');
-  // const sendFormButton = document.querySelector('#send-form-button');
-  // console.log(sendFormButton);
-  // sendFormButton.addEventListener('click', e => {
-  //   e.preventDefault();
-  // });
 
   const form = document.querySelector('#edit-task-form');
   form.addEventListener('submit', e => {
@@ -22,16 +17,6 @@ export default function loadTaskInformation(task, projectId) {
     editedTask.priority = document.querySelector('#task-priority').value;
     editedTask.done = document.querySelector('#task-done').checked;
 
-    //save edited task to state
     state.projectList.findProject(projectId).editTask(task.id, editedTask);
-    console.log(state.projectList);
-
-    //load tasks again
-
-    //console.log(editedTask);
-    
   });
-  // projectElem.addEventListener('click', e => {
-  //   console.log(task.title)
-  // })
 }

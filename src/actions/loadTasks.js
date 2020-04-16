@@ -14,7 +14,6 @@ export default function loadTasks(project) {
     });
 
 
-    // copy
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('text-color-black');
     deleteButton.innerHTML = 'Delete';
@@ -27,8 +26,6 @@ export default function loadTasks(project) {
       document.querySelector('.edit-task').innerHTML = '';
     });
     projectElem.appendChild(deleteButton);
-
-    // --
   });
   const inputTask = appendChild(`#${taskContainerID}`, '', 'add-project', 'input');
   inputTask.type = 'text';
