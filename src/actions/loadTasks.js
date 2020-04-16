@@ -7,7 +7,6 @@ export default function loadTasks(project) {
   const taskContainerID = `project${project.id}`;
   document.querySelector('#tasks').innerHTML = '';
   appendChild('#tasks', '', taskContainerID, 'div').classList.add('task-list');
-  // aca se crea el primer contenedor -> el elemento se llamará taskContainerTasks
   project.tasks.forEach(task => {
     const projectElem = appendChild(`#${taskContainerID}`, `<p class='task-title'>${task.title}</p>      `, task.id, 'div');
     projectElem.querySelector('.task-title').addEventListener('click', () => {
@@ -29,7 +28,6 @@ export default function loadTasks(project) {
     projectElem.appendChild(deleteButton);
     projectElem.classList.add('task-item');
   });
-  // Se implementará en el taskContainerTasks
   const inputTask = appendChild('#tasks', '', 'add-project', 'input');
   inputTask.type = 'text';
   inputTask.classList.add('add-new-task');
