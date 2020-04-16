@@ -13,6 +13,13 @@
 
   }
 
+  &-project-title {
+    color: var(--third-color);
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 74px;
+  }
+
   &-list {
     max-height: 340px;
     overflow-y: auto;
@@ -44,6 +51,7 @@
     }
   }
 }
+
 
 .add-new-task {
   color: var(--light-color);

@@ -6,6 +6,7 @@ import Project from '../logic/project';
 
 export default function loadProjectList(projectList) {
   document.querySelector('#projectList').innerHTML = '';
+  appendChild('#projectList', 'Project List', 'project-list', 'h2');
   projectList.forEach(project => {
     const projectListElem = appendChild('#projectList', `<p class='project-name'>${project.name}</p>`, project.id, 'div');
     projectListElem.querySelector('.project-name').addEventListener('click', () => {
