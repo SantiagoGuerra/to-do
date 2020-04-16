@@ -10,7 +10,7 @@ export default function loadTasks(project) {
   project.tasks.forEach(task => {
     const projectElem = appendChild(`#${taskContainerID}`, `<p class='task-title'>${task.title}</p>      `, task.id, 'div');
     projectElem.querySelector('.task-title').addEventListener('click', () => {
-      loadTaskInformation(task);
+      loadTaskInformation(task, project.id);
     });
 
 
