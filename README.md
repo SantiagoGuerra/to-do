@@ -93,7 +93,7 @@ You can see it working [here](https://santiagoguerra.github.io/to-do)
 Santiago Guerra - [@santi_gueam](https://twitter.com/dedalo_g)  - [@SantiagoGuerra](https://github.com/SantiagoGuerra) - guerrasantiago19@gmail.com
 <br />
 <br />
-Ivan Derlich - [@MaruKK](https://twitter.com/IvanDerlich) - [@euqueme](https://github.com/IvanDerlich) - a@ivanderlich.com
+[Ivan Derlich](https://github.com/IvanDerlich)
 
 
 Project Link: [https://github.com/SantiagoGuerra/to-do)
