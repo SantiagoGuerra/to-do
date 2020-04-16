@@ -29,7 +29,6 @@ export default function loadProjectList(projectList) {
       }
       document.querySelector('.edit-task').innerHTML = '';
       const inputTask = document.querySelector('#add-task');
-      console.log(inputTask.parentElement);
       inputTask.parentElement.removeChild(inputTask);
     });
     projectListElem.appendChild(deleteButton);
