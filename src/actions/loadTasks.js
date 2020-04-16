@@ -28,7 +28,7 @@ export default function loadTasks(project) {
     projectElem.appendChild(deleteButton);
     projectElem.classList.add('task-item');
   });
-  const inputTask = appendChild('#tasks', '', 'add-project', 'input');
+  const inputTask = appendChild('#tasks', '', 'add-task', 'input');
   inputTask.type = 'text';
   inputTask.classList.add('add-new-task');
   inputTask.setAttribute('placeholder', 'Create a new task');

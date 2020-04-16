@@ -23,8 +23,14 @@ export default function loadProjectList(projectList) {
       target.parentElement.removeChild(target);
       const targetTaskContainer = document.getElementById(`project${project.id}`);
       const tasks = document.getElementById('tasks');
-      tasks.removeChild(targetTaskContainer);
+
+      if (targetTaskContainer) {
+        tasks.removeChild(targetTaskContainer);
+      }
       document.querySelector('.edit-task').innerHTML = '';
+      const inputTask = document.querySelector('#add-task');
+      console.log(inputTask.parentElement);
+      inputTask.parentElement.removeChild(inputTask);
     });
     projectListElem.appendChild(deleteButton);
   });
