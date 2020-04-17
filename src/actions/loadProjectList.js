@@ -21,7 +21,7 @@ export default function loadProjectList(projectList) {
     const projectListElem = appendChild('#project-list-container',
       `${folderIcon.toSvg()}
       <p class='project-name'>${project.name}</p>
-      <span class="project-list-number-of-tasks" >6</span>
+      <span class="project-list-number-of-tasks" id="number-of-tasks${project.id}">${project.tasks.length}</span>
       `,
       project.id, 'div');
     projectListElem.classList.add('project-list-project');

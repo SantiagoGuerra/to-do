@@ -40,6 +40,11 @@
     align-items: center;
     justify-content: space-between;
 
+    & > span {
+      margin-right: 24px;
+      display: inline-block;
+    }
+
     &:hover {
       background-color: var(--alt-second-color);
     }
@@ -82,4 +87,16 @@
   font-size: 16px;
   border-radius: 8px;
   width: 100%;
+}
+
+.task-done {
+  
+  & > .task-title {
+    color: var(--third-color);
+    text-decoration: line-through;
+  }
+}
+
+.feather-check-circle {
+  stroke: var(--third-color);
 }

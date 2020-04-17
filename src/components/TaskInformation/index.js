@@ -29,10 +29,7 @@ export default function TaskInformation(task) {
       <textarea id="task-description" class="edit-input edit-input-description" draggable="false">${task.description} </textarea> <br>
 
 
-      <label for="">
-        Done:
-      </label>
-      <input id="task-done" type="checkbox" class="edit-input edit-input-checkbox" ${task.done ? 'checked' : ''}/>
+      
 
       <button id="send-form-button" class="edit-input edit-input-submit" type="submit">Edit</button>
     </form> 

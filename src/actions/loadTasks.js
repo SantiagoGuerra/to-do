@@ -8,11 +8,47 @@ const feather = require('feather-icons');
 
 export default function loadTasks(project) {
   const taskContainerID = `project${project.id}`;
+  const numberOfTaskTarget = document.querySelector(`#number-of-tasks${project.id}`);
   document.querySelector('#tasks').innerHTML = '';
+  const navigation = appendChild('#tasks', 'Go to project list', '', 'a');
+  navigation.classList.add('navigation');
+  navigation.setAttribute('href', '#projectList');
   appendChild('#tasks', project.name, '', 'h2').classList.add('task-project-title');
   appendChild('#tasks', '', taskContainerID, 'div').classList.add('task-list');
   project.tasks.forEach(task => {
-    const projectElem = appendChild(`#${taskContainerID}`, `<p class='task-title'>${task.title}</p>      `, task.id, 'div');
+    const iconIdString = `${task.done ? 'check-' : ''}circle`;
+    const projectElem = appendChild(`#${taskContainerID}`, `
+      <span id="checked${task.id}">${feather.icons[iconIdString].toSvg()}</span>
+      <p class='task-title'>${task.title}</p>`,
+    task.id, 'div');
+
+    const checked = document.querySelector(`#checked${task.id}`);
+    const taskContainer = checked.parentElement;
+    const taskState = state.projectList.findProject(project.id).findTask(task.id);
+
+    if (taskState.done) {
+      taskContainer.classList.add('task-done');
+      checked.innerHTML = feather.icons[iconIdString].toSvg();
+    } else {
+      taskContainer.classList.remove('task-done');
+      checked.innerHTML = feather.icons[iconIdString].toSvg();
+    }
+
+    checked.addEventListener('click', () => {
+      taskState.edit({ done: !taskState.done });
+
+      const iconIdStringState = `${taskState.done ? 'check-' : ''}circle`;
+
+      if (taskState.done) {
+        taskContainer.classList.add('task-done');
+        checked.innerHTML = feather.icons[iconIdStringState].toSvg();
+      } else {
+        taskContainer.classList.remove('task-done');
+        checked.innerHTML = feather.icons[iconIdStringState].toSvg();
+      }
+    });
+
+
     projectElem.querySelector('.task-title').addEventListener('click', () => {
       loadTaskInformation(task, project.id);
     });
