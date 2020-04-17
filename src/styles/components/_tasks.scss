@@ -19,7 +19,7 @@
     font-size: 28px;
     text-transform: uppercase;
     margin-bottom: 16px;
-    margin-top: 64px;
+    margin-top: var(--title-margin-top);
   }
 
   &-list {

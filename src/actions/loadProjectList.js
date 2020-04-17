@@ -2,21 +2,41 @@ import { appendChild } from '../utils/append';
 import loadTask from './loadTasks';
 import state from '../state';
 import Project from '../logic/project';
+import createElementFrom from '../utils/createElementFrom';
+
+const feather = require('feather-icons');
 
 
 export default function loadProjectList(projectList) {
   document.querySelector('#projectList').innerHTML = '';
-  appendChild('#projectList', 'Project List', 'project-list', 'h2');
+  const projectListTitle = appendChild('#projectList', 'Project List', '', 'h2');
+  projectListTitle.classList.add('project-list-title');
+
+  const folderIcon = feather.icons.folder;
+  folderIcon.attrs.class += ' project-list-folder-icon';
+  //  console.dir(folderIcon.attrs.class);
+
   projectList.forEach(project => {
-    const projectListElem = appendChild('#projectList', `<p class='project-name'>${project.name}</p>`, project.id, 'div');
+    const projectListElem = appendChild('#projectList',
+      `${folderIcon.toSvg()}
+      <p class='project-name'>${project.name}</p>
+      <span class="project-list-number-of-tasks" >6</span>
+      `,
+      project.id, 'div');
+    projectListElem.classList.add('project-list-project');
+
     projectListElem.querySelector('.project-name').addEventListener('click', () => {
       document.querySelector('#tasks').innerHTML = '';
       loadTask(project);
     });
 
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('text-color-black');
-    deleteButton.innerHTML = 'Delete';
+    const deleteButton = createElementFrom(feather.icons['trash-2'].toSvg());
+    deleteButton.classList.add('project-list-delete');
+    //deleteButton.innerHTML = 'Delete';
+
+    // const deleteButton = document.createElement('button');
+    // deleteButton.classList.add('project-list-delete');
+    // deleteButton.innerHTML = 'Delete';
 
     deleteButton.addEventListener('click', () => {
       const target = document.querySelector(`#${project.id}`);
