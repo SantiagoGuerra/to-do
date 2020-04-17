@@ -28,7 +28,7 @@ export default function seed() {
 
   const taskP1T3 = new Task(
     'Remove weeds',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );
@@ -40,7 +40,7 @@ export default function seed() {
 
   const taskP2T1 = new Task(
     'Buy materials',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );
@@ -48,7 +48,7 @@ export default function seed() {
 
   const taskP2T2 = new Task(
     'Build',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );
@@ -56,7 +56,7 @@ export default function seed() {
 
   const taskP2T3 = new Task(
     'Paint',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );
@@ -67,7 +67,7 @@ export default function seed() {
 
   const taskP3T1 = new Task(
     'Buy ingredients',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );
@@ -75,7 +75,7 @@ export default function seed() {
 
   const taskP3T2 = new Task(
     'Put preparation in the oven',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );
@@ -83,7 +83,7 @@ export default function seed() {
 
   const taskP3T3 = new Task(
     'Enjoy',
-    'Project Description',
+    'Task Description',
     '20/12/28',
     'low',
   );

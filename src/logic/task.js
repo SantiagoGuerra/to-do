@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 
 export default class Task {
   constructor(title,
-    description = 'No description',
+    description = 'Task description',
     dueDate = 'no due date',
     priority = 'low',
     done = false) {
