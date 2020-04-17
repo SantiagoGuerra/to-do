@@ -63,6 +63,7 @@ export default function loadTasks(project) {
       state.projectList.findProject(project.id).deleteTask(task.id);
       targetProject.removeChild(targetTask);
       document.querySelector('.edit-task').innerHTML = '';
+      numberOfTaskTarget.innerHTML = state.projectList.findProject(project.id).tasks.length;
     });
     projectElem.appendChild(deleteButton);
     projectElem.classList.add('task-item');
@@ -77,6 +78,7 @@ export default function loadTasks(project) {
       const projectState = state.projectList.findProject(project.id);
       projectState.addTask(newTask);
       loadTasks(projectState);
+      numberOfTaskTarget.innerHTML = state.projectList.findProject(project.id).tasks.length;
     }
   });
 }
