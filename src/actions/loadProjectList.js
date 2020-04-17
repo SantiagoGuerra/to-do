@@ -14,10 +14,11 @@ export default function loadProjectList(projectList) {
 
   const folderIcon = feather.icons.folder;
   folderIcon.attrs.class += ' project-list-folder-icon';
-  //  console.dir(folderIcon.attrs.class);
+
+  appendChild('#projectList', '', 'project-list-container', 'div').classList.add('project-list-container');
 
   projectList.forEach(project => {
-    const projectListElem = appendChild('#projectList',
+    const projectListElem = appendChild('#project-list-container',
       `${folderIcon.toSvg()}
       <p class='project-name'>${project.name}</p>
       <span class="project-list-number-of-tasks" >6</span>
@@ -32,11 +33,6 @@ export default function loadProjectList(projectList) {
 
     const deleteButton = createElementFrom(feather.icons['trash-2'].toSvg());
     deleteButton.classList.add('project-list-delete');
-    //deleteButton.innerHTML = 'Delete';
-
-    // const deleteButton = document.createElement('button');
-    // deleteButton.classList.add('project-list-delete');
-    // deleteButton.innerHTML = 'Delete';
 
     deleteButton.addEventListener('click', () => {
       const target = document.querySelector(`#${project.id}`);
@@ -50,13 +46,16 @@ export default function loadProjectList(projectList) {
       }
       document.querySelector('.edit-task').innerHTML = '';
       const inputTask = document.querySelector('#add-task');
-      inputTask.parentElement.removeChild(inputTask);
+      if (true && state.projectList.projects.length === 0) {
+        inputTask.parentElement.removeChild(inputTask);
+      }
     });
     projectListElem.appendChild(deleteButton);
   });
   const inputProject = appendChild('#projectList', '', 'add-project', 'input');
   inputProject.type = 'text';
-  inputProject.classList.add('text-color-black');
+  inputProject.classList.add('project-list-input-project');
+  inputProject.setAttribute('placeholder', 'Create a new Project');
 
 
   inputProject.addEventListener('keyup', e => {
@@ -66,4 +65,8 @@ export default function loadProjectList(projectList) {
       loadProjectList(state.projectList.projects);
     }
   });
+  appendChild('#projectList', `Created and designed by:<br> 
+  <a href="http://santiagoguerra.github.io/">Santiago Guerra</a><br> 
+  & <br><a href="http://www.ivanderlich.com/">Ivan Derlich</a>`, '', 'div')
+    .classList.add('credits');
 }

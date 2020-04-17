@@ -4,16 +4,27 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 24px;    
-  & > *{
-    margin-bottom: 20px;
-  }
+  padding: 10px;     
   &-title{
-    margin-top: var(--title-margin-top)    
+    margin-top: 85px;
+    margin-bottom: 40px;  
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--third-color);
+    font-weight: 100;
+    font-size: 20px;
+  }
+  &-container{
+    //background-color: blue;
+    height:300px;
+    overflow-y: auto;
   }
   &-project{
-    background-color: red;
+    
+    padding:24px;
+    height: 44px;
     display: flex;
+    margin-bottom: 4px;
     align-items: center;    
     justify-content: end;
     &:hover .project-list-delete{
@@ -22,21 +33,52 @@
     &:hover .project-list-folder-icon{
       display:none;
     }
+    &:hover{
+      background-color: var(--main-color);
+      border-radius: 8px;
+      cursor: pointer;
+    }  
   }
   &-number-of-tasks{
     order:3;
+    color: var(--third-color);
+    font-size: 12px;
   }  
   &-delete{
     order: -1;
-    display: none;
+    display: none; 
+    &:hover{
+      stroke:red;   
+    }    
   }
-  &-folder-icon{
-
-  }
+  &-input-project{
+    color: var(--light-color);
+    background: var(--main-color);
+    margin-bottom: 16px;
+    height: 44px;
+    border: none;
+    padding: 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 100%;     
+  }  
 }
 .project-name{
   margin-right: auto;
+  margin-left: 24px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color:var(--light-color);
+}
+.credits{
+  color: var(--light-color);
+  text-align: center;  
+  & > * {
+    margin-bottom: 6px;
+  }
+  & > a {
+    text-decoration: none;
+    color: var(--third-color);
+  }
 }
