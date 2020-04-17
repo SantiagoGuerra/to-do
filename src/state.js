@@ -1,4 +1,4 @@
-import seed from './data/seed';
+import seed from './seed';
 
 export default {
   projectList: seed(),
