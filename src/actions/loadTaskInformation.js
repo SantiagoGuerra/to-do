@@ -4,7 +4,9 @@ import state from '../state';
 
 export default function loadTaskInformation(task, projectId) {
   document.querySelector('.edit-task').innerHTML = '';
-
+  const navigation = appendChild('.edit-task', 'Go to project list', '', 'a');
+  navigation.classList.add('navigation');
+  navigation.setAttribute('href', '#tasks');
   appendChild('.edit-task', TaskInformation(task), task.id, 'div');
 
   const form = document.querySelector('#edit-task-form');

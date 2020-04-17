@@ -6,3 +6,10 @@
 @import 'components/projectList';
 
 @import 'layout/content';
+
+.navigation {
+  
+  @media screen and (min-width: 720px) {
+    display: none;
+  } 
+}

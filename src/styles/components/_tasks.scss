@@ -62,13 +62,19 @@
     }
 
     & > .delete-button {
-      display: none;
+      display: block;
 
       &:hover {
         cursor: pointer;
         stroke: red;
       }
     }
+
+    @media screen and (min-width: 720px) {
+      & > .delete-button {
+        display: none;
+      }
+    } 
 
     &:hover .delete-button {
       display: inline-block;
