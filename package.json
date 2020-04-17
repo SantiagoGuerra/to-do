@@ -41,6 +41,7 @@
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.2",
+    "feather-icons": "^4.28.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
     "lodash": "^4.17.15",

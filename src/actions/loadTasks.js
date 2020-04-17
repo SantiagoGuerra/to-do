@@ -2,6 +2,9 @@ import { appendChild } from '../utils/append';
 import loadTaskInformation from './loadTaskInformation';
 import state from '../state';
 import Task from '../logic/task';
+import createElementFrom from '../utils/createElementFrom';
+
+const feather = require('feather-icons');
 
 export default function loadTasks(project) {
   const taskContainerID = `project${project.id}`;
@@ -15,9 +18,8 @@ export default function loadTasks(project) {
     });
 
 
-    const deleteButton = document.createElement('button');
+    const deleteButton = createElementFrom(feather.icons['trash-2'].toSvg());
     deleteButton.classList.add('delete-button');
-    deleteButton.innerHTML = 'Delete';
 
     deleteButton.addEventListener('click', () => {
       const targetProject = document.querySelector(`#project${project.id}`);

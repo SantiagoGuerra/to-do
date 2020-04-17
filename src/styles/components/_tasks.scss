@@ -30,7 +30,7 @@
   }
 
   &-item {
-    background-color: var(--alt-second-color);
+    background-color: var(--second-color);
     height: 52px;
     margin-bottom: 4px;
     border-radius: 8px;
@@ -40,12 +40,29 @@
     align-items: center;
     justify-content: space-between;
 
+    &:hover {
+      background-color: var(--alt-second-color);
+    }
+
     & > p {
-      color: var(--light-color)
+      color: var(--light-color);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     & > .delete-button {
       display: none;
+
+      &:hover {
+        cursor: pointer;
+        stroke: red;
+      }
     }
 
     &:hover .delete-button {
