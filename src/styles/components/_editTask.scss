@@ -2,24 +2,39 @@
 
   &-task {
     background: #34495E;
-    min-width: 320px;    
+    min-width: 320px;
     height: 100%;
-    padding: 24px;
+    padding: 16px;
+    display: none;
+    position: relative;
+    padding-top: 162px;
+    overflow: hidden;
+
+    @media screen and (min-width:720px){
+      display: block;
+      width: 320px;
+      padding-top: 85px;
+    }
   }
 
   &-input {
     color: var(--light-color);
-    background: var(--second-color);
-    padding: 16px 0 ;
+    background: var(--main-color);
+    padding-left: 16px;
+    border-radius: 8px;
     font-size: 16px;
     border: none;
     display: inline-block;
     width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    height: 44px;
 
     &-description {
       resize: none;
       height: 160px;
-      padding: 16px 2px;
+      padding: 16px;
       
       &:focus {
         border: .5px var(--third-color) solid;
@@ -28,7 +43,6 @@
 
     &-checkbox {
       display: inline-block;
-      background-color: red;
       width: 24px;
     }
 
@@ -36,6 +50,12 @@
       background: var(--third-color);
       margin-top: 24px;
       border-radius: 8px;
+      margin-top: auto;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
     }
   }
 }

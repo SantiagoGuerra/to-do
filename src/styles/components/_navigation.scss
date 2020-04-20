@@ -1,0 +1,18 @@
+.navigation {
+  background: var(--third-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+}
+
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+
+  & > svg {
+    stroke: var(--main-color)
+  } 
+}

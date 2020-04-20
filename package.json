@@ -8,7 +8,7 @@
     "build-no-open": "webpack --mode production",
     "dev": "webpack --mode development",
     "dev-open": "webpack --mode development && xdg-open ./dist/index.html",
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development --open --host 192.168.0.14",
     "watch": "webpack --mode production --watch",
     "b": "webpack --mode production && xdg-open ./dist/index.html",
     "bn": "webpack --mode production",

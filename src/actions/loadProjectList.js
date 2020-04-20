@@ -3,6 +3,7 @@ import loadTask from './loadTasks';
 import state from '../state';
 import Project from '../logic/project';
 import createElementFrom from '../utils/createElementFrom';
+import go from './navigation';
 
 const feather = require('feather-icons');
 
@@ -29,6 +30,7 @@ export default function loadProjectList(projectList) {
     projectListElem.querySelector('.project-name').addEventListener('click', () => {
       document.querySelector('#tasks').innerHTML = '';
       loadTask(project);
+      go('.project-list', '.task-container');
     });
 
     const deleteButton = createElementFrom(feather.icons['trash-2'].toSvg());

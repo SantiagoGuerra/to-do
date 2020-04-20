@@ -2,14 +2,19 @@
   &-container {
     background: var(--main-color);
     flex: 2 1 100%;
+    display: none;
+
+    @media screen and (min-width:720px){
+      display: block;
+    }
 
     & > #tasks {
       height: 100%;
       display: flex;    
       flex-direction: column;
-      justify-content: space-between;
-      padding: 24px;
       width: 100%;
+      padding-bottom: 0;
+      padding: 0 16px;
     }
 
   }
@@ -18,30 +23,32 @@
     color: var(--third-color);
     font-size: 28px;
     text-transform: uppercase;
-    margin-bottom: 16px;
-    margin-top: var(--title-margin-top);
+    margin-top: 162px;
+    margin-bottom: 8px;
+    @media screen and (min-width:720px) {
+      margin-top: 85px;
+    }
   }
 
   &-list {
     max-height: 340px;
     overflow-y: auto;
     height: 100%;
-    //width: 500px;
   }
 
   &-item {
     background-color: var(--second-color);
-    height: 52px;
+    height: 44px;
     margin-bottom: 4px;
     border-radius: 8px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     & > span {
-      margin-right: 24px;
+      margin-right: 16px;
       display: inline-block;
     }
 
@@ -87,12 +94,15 @@
   color: var(--light-color);
   background: var(--alt-second-color);
   margin-bottom: 16px;
-  height: 52px;
+  height: 44px;
   border: none;
-  padding: 24px;
+  padding-left: 16px;
   font-size: 16px;
   border-radius: 8px;
   width: 100%;
+  margin-top: auto;
+  min-height: 44px;
+
 }
 
 .task-done {
