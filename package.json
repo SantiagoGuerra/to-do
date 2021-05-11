@@ -44,7 +44,7 @@
     "css-loader": "^3.5.2",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-sass": "^4.13.1",
     "path": "^0.12.7",
     "sass-loader": "^8.0.2",
